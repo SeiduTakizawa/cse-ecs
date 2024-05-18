@@ -84,7 +84,11 @@ public class Player {
         tempBoard.setBoard(board);
 
         if (tempBoard.isWinning()) {
-            return isMaximizing ? -1 : 1;
+            if (isMaximizing) {
+                return -1;
+            } else {
+                return 1;
+            }
         }
         if (tempBoard.isFull()) {
             return 0;
